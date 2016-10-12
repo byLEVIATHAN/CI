@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond $1 !^(index\.php|images|robots\.txt|source|kategorie|captcha|(.*)\.(css|js|png|otf|svg|ttf|woff|php|gif|jpg|mp4|swf))
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+</IfModule>
+
+RewriteCond %{HTTP_HOST} ^airbnb\.claydip\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.airbnb\.claydip\.com$
+RewriteRule ^property$ "http\:\/\/airbnb\.claydip\.com\/property\/addnew" [R=301,L]
+
